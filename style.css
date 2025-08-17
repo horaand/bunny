@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  background: #fef4ea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.bunny {
+  position: relative;
+  width: 200px;
+  height: 240px;
+}
+
+.ear {
+  position: absolute;
+  width: 45px;
+  height: 100px;
+  background: #fff;
+  border: 5px solid #ccc;
+  border-radius: 60% 60% 40% 40%;
+  top: 0;
+  transform-origin: top center;
+  animation: flap 2s ease-in-out infinite;
+}
+.left-ear { left: 35px;  animation-delay: 1s; }
+.right-ear{ right: 10px; animation-delay: 0s; }
+
+.face {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 200px;
+  height: 180px;
+  background: #fff;
+  border: 5px solid #ccc;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Eyes */
+.eye {
+  position: absolute;
+  width: 40px;
+  height: 50px;
+  background: #000;
+  border-radius: 50%;
+  top: 50px;
+  overflow: hidden;
+}
+.left-eye { left: 35px; }
+.right-eye{ right: 35px; }
+
+.eyeball {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10px auto;
+  animation: blink 3s infinite;
+}
+
+/* Nose */
+.nose {
+  position: absolute;
+  width: 20px;
+  height: 15px;
+  background: pink;
+  border-radius: 50%;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.arm {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: 145px;         
+  z-index: 2;               
+}
+
+.left-arm { left: 15px; }
+.right-arm{
+  right: 5px;
+  transform-origin: top right;
+  animation: wave 2.2s ease-in-out infinite;
+}
+
+
+.paw{
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  border: 5px solid #ccc;
+  border-radius: 50%;
+  bottom: 0;
+}
+
+
+.carrot{
+  position: absolute;
+  width: 20px;
+  height: 52px;
+  background: #ff8a00;
+  border-radius: 10px 10px 14px 14px;
+  transform: rotate(-20deg);
+  left: 14px;
+  top: -2px;
+  box-shadow: inset 0 -6px 0 rgba(0,0,0,.08);
+}
+
+.carrot .leaf{
+  position: absolute;
+  width: 10px; height: 18px;
+  background: #3bb54a;
+  border-radius: 10px 10px 0 10px;
+  top: -10px;
+}
+.leaf.l1{ left: -4px; transform: rotate(-18deg); }
+.leaf.l2{ left: 6px;  transform: rotate(0deg);   }
+.leaf.l3{ left: 16px; transform: rotate(18deg);  }
+
+
+@keyframes flap{
+  0%,100%{ transform: rotate(0deg); }
+  50%    { transform: rotate(15deg); }
+}
+
+@keyframes blink{
+  0%,90%,100%{ transform: scaleY(1); }
+  95%       { transform: scaleY(0.1); }
+}
+
+
+@keyframes wave{
+  0%,100% { transform: rotate(0deg); }
+  50%     { transform: rotate(-12deg); }
+}
